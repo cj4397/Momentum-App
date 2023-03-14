@@ -256,11 +256,14 @@ function displayQuote() {
         case character === 'Tet':
             pic.src = 'assets/Tet.png';
             break;
-    }
+    }    setInterval(displayQuote, 60000);
+
 }
+
+
 
 
 displayQuote()
 
-setInterval(displayQuote, 60000);
+
 
