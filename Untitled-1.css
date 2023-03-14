@@ -1,0 +1,44 @@
+html,
+body {
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#quote {
+    width: 100%;
+
+}
+
+.quote_pic {
+    width: 80px;
+    height: 100px;
+}
+
+#quote_pic {
+    border: 0px solid black;
+    border-radius: 50%;
+
+}
+
+#wicon {
+    max-height: 40px;
+    max-width: 40px;
+}
+
+#temp,
+#city {
+    font-size: 25px;
+}
+
+@media (min-width: 768px) {
+    #quote {
+        width: 75%;
+    }
+}
