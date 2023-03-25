@@ -12,20 +12,30 @@ function onGeoSuccess(position) {
             const pic = document.querySelector(" #wicon");
             const city = document.querySelector(" #city");
             const weather = document.querySelector(" #temp");
+            const weather_description = document.getElementById('weather_description');
+            const humidity = document.getElementById('humidity');
+            const slevel = document.getElementById('sea_level');
+            const glevel = document.getElementById('ground_level');
             let iconcode = data.weather[0].icon;
             let iconurl = "https://openweathermap.org/img/wn/" + iconcode + "@2x.png";
 
 
+            slevel.innerHTML = `<b>${data.main.sea_level} hPa</b> = Atmospheric pressure on the sea level`;
+            glevel.innerHTML = `<b>${data.main.grnd_level} hPa</b> = Atmospheric pressure on the ground level`;
+            humidity.innerHTML = `<b>${data.main.humidity}%</b> = Humidity`;
             city.innerText = data.name;
             weather.innerText = `${data.main.temp}℃`;
             pic.src = iconurl;
-            // ${data.weather[0].description}
+            weather_description.innerHTML = `We are having: <b>${data.weather[0].description}</b>`
         });
 
 
 }
+
 function onGeoError() {
+
     alert("Can't find you.")
+    document.getElementById('weather_container').style.visibility = "hidden"
 }
 
 navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);

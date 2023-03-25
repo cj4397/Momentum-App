@@ -56,11 +56,11 @@ let quotes = [
         quote: "There's no more trusted observer than someone who suspects you."
     },
     {
-        character: "Kurami Zell",
+        character: "Kurami",
         quote: "A way for the weak to stay weak, but still defeat the strong. A way to stay who you are but surpass your limits. To soar through the sky, even if you can't fly. He's always found a way, inside despair, suffering, and darkness."
     },
     {
-        character: "Stephanie Dola",
+        character: "Stephanie",
         quote: "A temporary defeat is nothing if it leads to ultimate victory!"
     },
     {
@@ -100,7 +100,7 @@ let quotes = [
         quote: "It's better for a man to be slow than fast."
     },
     {
-        character: "Shiro and Sora",
+        character: "Blank",
         quote: "This world is just... a crappy game."
     },
     {
@@ -108,7 +108,7 @@ let quotes = [
         quote: "'That's why we'll never win.' If that's what you're thinking, you're doomed to fail."
     },
     {
-        character: "Shiro and Sora",
+        character: "Blank",
         quote: "As long as there's a way to win the game, the Blank will not know defeat."
     },
     {
@@ -225,7 +225,7 @@ let quotes = [
 let author = document.getElementById('quote_author')
 let quote = document.getElementById('quote_quote')
 let pic = document.getElementById('quote_pic')
-let btn = document.getElementById('quote_next')
+
 
 function displayQuote() {
     let index = Math.floor(Math.random() * quotes.length);
@@ -244,24 +244,29 @@ function displayQuote() {
         case character === 'Jibril':
             pic.src = 'assets/Jibril.png';
             break;
-        case character === 'Shiro and Sora':
+        case character === 'Blank':
             pic.src = 'assets/Shiro and Sora.png';
             break;
-        case character === 'Stephanie Dola':
+        case character === 'Stephanie':
             pic.src = 'assets/Stephanie Dola.png';
             break;
-        case character === 'Kurami Zell':
+        case character === 'Kurami':
             pic.src = 'assets/Kurami Zell.png';
             break;
         case character === 'Tet':
             pic.src = 'assets/Tet.png';
             break;
-    }    setInterval(displayQuote, 60000);
+    }
 
 }
 
+let interval = setInterval(displayQuote, 60000);
 
-
+function next() {
+    clearInterval(interval);
+    displayQuote()
+    interval = setInterval(displayQuote, 60000);
+}
 
 displayQuote()
 
