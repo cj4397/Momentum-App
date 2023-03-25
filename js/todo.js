@@ -330,9 +330,6 @@ loginInput2.onkeydown = function (e) {
         } else {
             addTask(e.target.value)
             e.target.value = '';
-
-            // localStorage.clear();
-            displayTasks();
         }
     }
 };
@@ -340,7 +337,7 @@ loginInput2.onkeydown = function (e) {
 
 
 if (savedUsername === null) {
-    console.log(savedUsername)
+
     modal_name_open();
     loginForm.addEventListener("submit", onLoginSubmit);
 
